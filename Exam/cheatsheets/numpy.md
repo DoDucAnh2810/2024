@@ -136,8 +136,78 @@ cumsum_dtype = np.cumsum(arr, dtype=np.float64)
 print(cumsum_dtype)  # Output: [ 1.  3.  6. 10.]
 ```
 
-#### Key Points
-- `np.cumsum` is useful for computing running totals or cumulative metrics.
-- It works on arrays of any shape and can compute along any axis.
-- The cumulative sum includes the current element in its computation.
+
+### Digitize
+
+```python
+numpy.digitize(x, bins, right=False)
+```
+
+#### Parameters:
+
+1. **x**:
+   - Array-like input data to be binned.
+   
+2. **bins**:
+   - Array of bin edges. Must be 1-dimensional and monotonically increasing or decreasing.
+
+3. **right** (default: `False`):
+   - If `False`, the intervals are left-inclusive (e.g., `[bins[i-1], bins[i])`).
+   - If `True`, the intervals are right-inclusive (e.g., `(bins[i-1], bins[i]]`).
+
+#### Returns:
+
+- An array of integers indicating the index of the bin to which each value in `x` belongs.
+  - Index starts at 1 for the first bin.
+  - Values smaller than the first bin edge return `0`.
+  - Values larger than the last bin edge return `len(bins)`.
+
+---
+
+#### Example Usage:
+
+##### 1. Basic Example:
+```python
+import numpy as np
+
+x = [0.2, 6.4, 3.0, 1.6, 10.0]  # Data to bin
+bins = [0, 2, 4, 6, 8]          # Bin edges
+
+result = np.digitize(x, bins)
+print(result)  # Output: [1 4 2 1 5]
+```
+
+Explanation:
+- `0.2` belongs to bin 1: `[0, 2)`
+- `6.4` belongs to bin 4: `[6, 8)`
+- `3.0` belongs to bin 2: `[2, 4)`
+- `1.6` belongs to bin 1: `[0, 2)`
+- `10.0` is greater than the last bin, so it’s assigned index `5`.
+
+---
+
+##### 2. Using `right=True`:
+```python
+result = np.digitize(x, bins, right=True)
+print(result)  # Output: [0 4 2 1 5]
+```
+
+Explanation:
+- With `right=True`, the intervals are `(bins[i-1], bins[i]]`.
+- `0.2` is less than the first bin (`0`), so it’s `0`.
+
+---
+
+##### 3. Descending Bins:
+If the bins are in descending order, you need to reverse the order to ensure the bin edges are monotonic.
+
+```python
+bins_desc = [8, 6, 4, 2, 0]
+result = np.digitize(x, bins_desc)
+print(result)  # Output is based on ascending interpretation of bins.
+```
+
+---
+
+
 
