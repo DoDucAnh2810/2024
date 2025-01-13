@@ -82,6 +82,7 @@ df[df['Age'] > 30]        # Filter rows where Age > 30
 df['Age'] = df['Age'] + 1                      # Update a column
 df['Gender'] = ['F', 'M', 'M']                 # Add a new column
 df.rename(columns={'Age': 'Years'}, inplace=True)  # Rename a column
+df.replace({'x': 'a', 2: 20}, inplace=True)
 ```
 
 ---

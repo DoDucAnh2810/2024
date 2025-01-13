@@ -11,7 +11,8 @@
 
 ## Subgraph
 
-*Content for Subgraph can be added here.*
+1. **`nx.subgraph`**
+2. **`nx.edge_subgraph`**
 
 ---
 
