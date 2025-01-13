@@ -193,3 +193,75 @@ print("Best Score:", grid_search.best_score_)
 - **Imbalanced Data**: 
   - Adjust class weights (`class_weight='balanced'`)  
   - Use oversampling/undersampling (e.g., SMOTE in `imblearn`)
+ 
+---
+
+## Metrics
+
+Scikit-learn's `metrics` module offers a comprehensive suite of functions to evaluate the performance of machine learning models. Here's an overview of the key metrics available:
+
+**Classification Metrics:**
+
+- `accuracy_score`: Computes the accuracy classification score.
+- `roc_auc_score`: Calculates the Area Under the Receiver Operating Characteristic Curve (ROC AUC) from prediction scores.
+- `average_precision_score`: Computes the average precision (AP) from prediction scores.
+- `balanced_accuracy_score`: Computes the balanced accuracy, which accounts for class imbalance.
+- `brier_score_loss`: Measures the Brier score loss.
+- `classification_report`: Generates a text report showing the main classification metrics, including precision, recall, and F1-score.
+- `confusion_matrix`: Computes the confusion matrix to evaluate the accuracy of a classification.
+- `f1_score`: Computes the F1 score, the harmonic mean of precision and recall.
+- `fbeta_score`: Computes the F-beta score, which weights recall more than precision by a factor of beta.
+- `hamming_loss`: Calculates the average Hamming loss, the fraction of labels that are incorrectly predicted.
+- `jaccard_score`: Computes the Jaccard similarity coefficient score.
+- `log_loss`: Computes the logarithmic loss between true labels and predicted probabilities.
+- `matthews_corrcoef`: Calculates the Matthews correlation coefficient, a measure of the quality of binary classifications.
+- `precision_recall_curve`: Computes precision-recall pairs for different probability thresholds.
+- `precision_score`: Calculates the precision, the ratio of true positives to the sum of true positives and false positives.
+- `recall_score`: Computes the recall, the ratio of true positives to the sum of true positives and false negatives.
+- `roc_curve`: Computes the Receiver Operating Characteristic (ROC) curve.
+- `zero_one_loss`: Calculates the zero-one classification loss.
+
+**Regression Metrics:**
+
+- `explained_variance_score`: Measures the explained variance regression score.
+- `max_error`: Computes the maximum residual error.
+- `mean_absolute_error`: Calculates the mean absolute error regression loss.
+- `mean_squared_error`: Computes the mean squared error regression loss.
+- `mean_squared_log_error`: Calculates the mean squared logarithmic error regression loss.
+- `median_absolute_error`: Computes the median absolute error regression loss.
+- `r2_score`: Calculates the R² (coefficient of determination) regression score function.
+- `mean_absolute_percentage_error`: Computes the mean absolute percentage error (MAPE) regression loss.
+- `mean_pinball_loss`: Calculates the pinball loss for quantile regression.
+- `mean_poisson_deviance`: Computes the mean Poisson deviance regression loss.
+- `mean_gamma_deviance`: Calculates the mean Gamma deviance regression loss.
+- `mean_tweedie_deviance`: Computes the mean Tweedie deviance regression loss.
+- `d2_absolute_error_score`: Measures the D² regression score function, representing the fraction of absolute error explained.
+- `d2_pinball_score`: Computes the D² regression score function, representing the fraction of pinball loss explained.
+- `d2_tweedie_score`: Calculates the D² regression score function, representing the fraction of Tweedie deviance explained.
+
+**Clustering Metrics:**
+
+- `adjusted_mutual_info_score`: Computes the Adjusted Mutual Information between two clusterings.
+- `adjusted_rand_score`: Calculates the Rand index adjusted for chance.
+- `calinski_harabasz_score`: Computes the Calinski and Harabasz score, also known as the Variance Ratio Criterion.
+- `completeness_score`: Measures the completeness metric of a cluster labeling given a ground truth.
+- `davies_bouldin_score`: Computes the Davies-Bouldin score, which evaluates the average similarity ratio of each cluster with its most similar cluster.
+- `fowlkes_mallows_score`: Measures the similarity of two clusterings of a set of points.
+- `homogeneity_score`: Computes the homogeneity metric of a cluster labeling given a ground truth.
+- `mutual_info_score`: Calculates the Mutual Information between two clusterings.
+- `normalized_mutual_info_score`: Computes the Normalized Mutual Information between two clusterings.
+- `rand_score`: Calculates the Rand index, a measure of the similarity between two data clusterings.
+- `silhouette_score`: Computes the mean Silhouette Coefficient of all samples, which measures how similar a sample is to its own cluster compared to other clusters.
+- `v_measure_score`: Calculates the V-measure cluster labeling given a ground truth.
+
+**Multilabel Ranking Metrics:**
+
+- `coverage_error`: Measures the coverage error, which represents how far we need to go to cover all true labels.
+- `label_ranking_average_precision_score`: Computes the ranking-based average precision.
+- `label_ranking_loss`: Calculates the ranking loss measure.
+
+**Pairwise Metrics:**
+
+- `pairwise_distances`: Computes the distance matrix from a vector array.
+- `cosine_similarity`: Calculates the cosine similarity between samples. 
+
