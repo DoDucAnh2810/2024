@@ -209,5 +209,16 @@ print(result)  # Output is based on ascending interpretation of bins.
 
 ---
 
+### Array Split
 
+```python
+import numpy as np
+
+my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+parts = np.array_split(my_list, 5)
+
+# Convert the NumPy arrays back to lists (optional)
+parts = [list(part) for part in parts]
+print(parts)
+```
 
