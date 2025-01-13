@@ -1,7 +1,7 @@
 ### 0. **`ttest_ind`**
    - **Paired t-test**: Used to compare means of two independent groups.
    - **Example**:
-     ```python
+  ```python
     from scipy.stats import ttest_ind
     
     # Sample data
