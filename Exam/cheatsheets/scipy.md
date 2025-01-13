@@ -1,21 +1,21 @@
 ### 0. **`ttest_ind`**
    - **Paired t-test**: Used to compare means of two independent groups.
    - **Example**:
-  ```python
-    from scipy.stats import ttest_ind
+     ```python
+     from scipy.stats import ttest_ind
     
-    # Sample data
-    data1 = [10, 12, 9, 11, 10]
-    data2 = [8, 7, 6, 9, 10]
+     # Sample data
+     data1 = [10, 12, 9, 11, 10]
+     data2 = [8, 7, 6, 9, 10]
     
-    # Perform a two-sample t-test (assuming equal variances)
-    t_stat, p_value = ttest_ind(data1, data2)
-    print(f"T-statistic: {t_stat}, P-value: {p_value}")
+     # Perform a two-sample t-test (assuming equal variances)
+     t_stat, p_value = ttest_ind(data1, data2)
+     print(f"T-statistic: {t_stat}, P-value: {p_value}")
     
-    # Perform a two-sample t-test (Welch’s t-test, unequal variances)
-    t_stat_welch, p_value_welch = ttest_ind(data1, data2, equal_var=False)
-    print(f"T-statistic (Welch): {t_stat_welch}, P-value: {p_value_welch}")
-   ```
+     # Perform a two-sample t-test (Welch’s t-test, unequal variances)
+     t_stat_welch, p_value_welch = ttest_ind(data1, data2, equal_var=False)
+     print(f"T-statistic (Welch): {t_stat_welch}, P-value: {p_value_welch}")
+     ```
 
 ---
 
