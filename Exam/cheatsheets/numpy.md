@@ -67,3 +67,77 @@
   np.percentile([10, 12, 9], 25)  # Output: 9.75
   np.percentile([10, 12, 9], 75)  # Output: 11.5
   ```
+
+### 9. Cumulative Sum
+```python
+numpy.cumsum(a, axis=None, dtype=None, out=None)
+```
+
+#### Parameters
+1. **`a` (array-like):**  
+   The input array for which the cumulative sum is computed.
+   
+2. **`axis` (int or None, optional):**  
+   The axis along which the cumulative sum is performed.  
+   - If `axis=0`, the cumulative sum is computed along columns (for 2D arrays).
+   - If `axis=1`, it is computed along rows.
+   - If `axis=None`, the array is flattened, and the cumulative sum is computed over all elements.
+
+3. **`dtype` (dtype, optional):**  
+   The type of the returned array. By default, it is the same as the type of the input array, but you can specify a different type.
+
+4. **`out` (ndarray, optional):**  
+   An alternative output array where the result will be stored. It must have the same shape as the expected output.
+
+#### Return Value
+An array of the same shape as the input, containing the cumulative sums.
+
+#### Example Usage
+##### 1. Cumulative sum over a 1D array
+```python
+import numpy as np
+
+arr = np.array([1, 2, 3, 4])
+cumsum = np.cumsum(arr)
+print(cumsum)  # Output: [ 1  3  6 10 ]
+```
+
+##### 2. Cumulative sum over a 2D array
+```python
+arr_2d = np.array([[1, 2, 3],
+                   [4, 5, 6]])
+
+# Cumulative sum along rows (axis=0)
+cumsum_axis0 = np.cumsum(arr_2d, axis=0)
+print(cumsum_axis0)
+# Output:
+# [[ 1  2  3]
+#  [ 5  7  9]]
+
+# Cumulative sum along columns (axis=1)
+cumsum_axis1 = np.cumsum(arr_2d, axis=1)
+print(cumsum_axis1)
+# Output:
+# [[ 1  3  6]
+#  [ 4  9 15]]
+```
+
+##### 3. Flattened cumulative sum (`axis=None`)
+```python
+flattened_cumsum = np.cumsum(arr_2d, axis=None)
+print(flattened_cumsum)
+# Output: [ 1  3  6 10 15 21 ]
+```
+
+##### 4. Specifying `dtype`
+```python
+arr = np.array([1, 2, 3, 4], dtype=np.int32)
+cumsum_dtype = np.cumsum(arr, dtype=np.float64)
+print(cumsum_dtype)  # Output: [ 1.  3.  6. 10.]
+```
+
+#### Key Points
+- `np.cumsum` is useful for computing running totals or cumulative metrics.
+- It works on arrays of any shape and can compute along any axis.
+- The cumulative sum includes the current element in its computation.
+
