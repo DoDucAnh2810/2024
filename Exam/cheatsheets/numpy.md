@@ -137,7 +137,7 @@ print(cumsum_dtype)  # Output: [ 1.  3.  6. 10.]
 ```
 
 
-### Digitize
+### 10. Digitize
 
 ```python
 numpy.digitize(x, bins, right=False)
