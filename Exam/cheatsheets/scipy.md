@@ -1,5 +1,3 @@
----
-
 ### 0. **`ttest_ind`**
    - **Paired t-test**: Used to compare means of two independent groups.
    - **Example**:
