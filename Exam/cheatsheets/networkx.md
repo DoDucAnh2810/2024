@@ -142,7 +142,7 @@ nx.set_node_attributes(G, values, name='attribute_name')
 ```python
 import networkx as nx
 
-attributes = nx.get_node_attributes(G, 'attribute_name')  # Dictionary of node attributes
+attributes = nx.get_node_attributes(G, 'attribute_name')  # Dictionary with node as the key
 ```
 
 ### 3. Access Attributes for a Specific Node
@@ -186,7 +186,7 @@ nx.set_edge_attributes(G, values)
 ```python
 import networkx as nx
 
-edge_attributes = nx.get_edge_attributes(G, 'weight')  # Dictionary of edge attributes
+edge_attributes = nx.get_edge_attributes(G, 'weight')  # Dictionary with edge as the key
 ```
 
 ### 3. Access Attributes for a Specific Edge
